@@ -1,0 +1,162 @@
+/* Guide Styles - Pop-ups */
+.guide-container {
+  position: relative;
+}
+
+.guide-button {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #00FFFF;
+  background: rgba(0, 0, 0, 0.8);
+  color: #00FFFF;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  z-index: 100;
+  transition: all 0.3s;
+  box-shadow: 
+    0 0 10px #00FFFF,
+    inset 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.guide-button:hover {
+  background: rgba(0, 255, 255, 0.2);
+  box-shadow: 
+    0 0 20px #00FFFF,
+    inset 0 0 15px rgba(0, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.guide-icon {
+  display: block;
+  text-shadow: 0 0 5px #00FFFF;
+}
+
+/* Pop-up Styles */
+.guide-popup {
+  position: fixed;
+  bottom: 70px;
+  left: 10px;
+  min-width: 250px;
+  max-width: 350px;
+  background: rgba(0, 0, 0, 0.95);
+  border: 2px solid #00FFFF;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 
+    0 0 20px #00FFFF,
+    0 0 40px rgba(0, 255, 255, 0.5),
+    inset 0 0 15px rgba(0, 255, 255, 0.1);
+  z-index: 101;
+  font-family: 'Press Start 2P', cursive;
+  animation: popupSlideIn 0.3s ease-out;
+}
+
+@keyframes popupSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup-header {
+  font-size: 0.6rem;
+  color: #FFFF00;
+  text-shadow: 
+    0 0 8px #FFFF00,
+    0 0 15px #FFFF00;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #00FFFF;
+}
+
+.popup-content {
+  font-size: 0.45rem;
+  color: #FFFFFF;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+  line-height: 1.8;
+}
+
+.popup-content p {
+  margin: 0 0 10px 0;
+}
+
+.popup-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.popup-item-button {
+  padding: 6px 10px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.4rem;
+  background: rgba(0, 255, 255, 0.1);
+  border: 2px solid #00FFFF;
+  color: #00FFFF;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s;
+  box-shadow: 
+    0 0 8px rgba(0, 255, 255, 0.3),
+    inset 0 0 8px rgba(0, 255, 255, 0.05);
+  text-align: left;
+}
+
+.popup-item-button:hover {
+  background: rgba(0, 255, 255, 0.2);
+  box-shadow: 
+    0 0 12px #00FFFF,
+    inset 0 0 10px rgba(0, 255, 255, 0.15);
+  transform: translateX(5px);
+}
+
+.item-popup {
+  bottom: 70px;
+  left: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .guide-button {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+    bottom: 5px;
+    left: 5px;
+  }
+
+  .guide-popup {
+    bottom: 60px;
+    left: 5px;
+    min-width: 200px;
+    max-width: 280px;
+    padding: 12px;
+  }
+
+  .popup-header {
+    font-size: 0.5rem;
+  }
+
+  .popup-content {
+    font-size: 0.4rem;
+  }
+
+  .popup-item-button {
+    font-size: 0.35rem;
+    padding: 5px 8px;
+  }
+}
+

@@ -1,0 +1,314 @@
+/* Game Styles */
+.game-canvas {
+  border: 2px solid #00FFFF;
+  border-radius: 5px;
+  background: #000;
+  box-shadow: 
+    0 0 20px #00FFFF,
+    inset 0 0 20px rgba(0, 255, 255, 0.1);
+  display: block;
+  margin: 0 auto;
+}
+
+/* Pong Game */
+.pong-game {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Space Invaders Game */
+.space-invaders-game {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Reaction Game */
+.reaction-game {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.reaction-instructions {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  color: #FFFF00;
+  text-align: center;
+  text-shadow: 
+    0 0 10px #FFFF00,
+    0 0 20px #FFFF00;
+}
+
+.instruction-text {
+  animation: instructionBlink 1s infinite;
+}
+
+@keyframes instructionBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.reaction-target {
+  width: 200px;
+  height: 200px;
+  border: 3px solid #FF00FF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: rgba(255, 0, 255, 0.1);
+}
+
+.reaction-target:hover {
+  border-color: #00FFFF;
+  box-shadow: 0 0 30px #00FFFF;
+}
+
+.reaction-target.visible {
+  border-color: #FF0000;
+  box-shadow: 
+    0 0 30px #FF0000,
+    inset 0 0 30px rgba(255, 0, 0, 0.3);
+  animation: targetPulse 0.5s infinite;
+}
+
+@keyframes targetPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.target-circle {
+  width: 150px;
+  height: 150px;
+  border: 4px solid #FF0000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 0 20px #FF0000,
+    inset 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+.target-inner {
+  width: 100px;
+  height: 100px;
+  background: #FF0000;
+  border-radius: 50%;
+  box-shadow: 
+    0 0 15px #FF0000,
+    inset 0 0 15px rgba(255, 255, 255, 0.3);
+  animation: targetInnerPulse 0.3s infinite;
+}
+
+@keyframes targetInnerPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+.reaction-score {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
+  color: #00FFFF;
+  text-align: center;
+  text-shadow: 
+    0 0 10px #00FFFF,
+    0 0 20px #00FFFF;
+}
+
+.reaction-time {
+  margin-top: 10px;
+  color: #FFFF00;
+  text-shadow: 
+    0 0 10px #FFFF00,
+    0 0 20px #FFFF00;
+}
+
+.reaction-start-button {
+  padding: 10px 20px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
+  background: rgba(0, 0, 0, 0.8);
+  border: 3px solid #00FF99;
+  color: #00FF99;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 
+    0 0 15px #00FF99,
+    inset 0 0 10px rgba(0, 255, 153, 0.2);
+  transition: all 0.3s;
+}
+
+.reaction-start-button:hover {
+  background: #00FF99;
+  color: #000;
+  box-shadow: 
+    0 0 25px #00FF99,
+    inset 0 0 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
+}
+
+/* Power Up Game */
+.power-up-game {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.power-up-instructions {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.5rem;
+  color: #00FF99;
+  text-align: center;
+  text-shadow: 
+    0 0 10px #00FF99,
+    0 0 20px #00FF99;
+}
+
+/* Game Over / Victory */
+.game-over,
+.game-victory {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  border: 4px solid;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  z-index: 1000;
+  animation: gameOverPulse 1s infinite;
+}
+
+.game-over {
+  border-color: #FF0000;
+  box-shadow: 
+    0 0 30px #FF0000,
+    inset 0 0 30px rgba(255, 0, 0, 0.3);
+}
+
+.game-victory {
+  border-color: #00FF99;
+  box-shadow: 
+    0 0 30px #00FF99,
+    inset 0 0 30px rgba(0, 255, 153, 0.3);
+}
+
+@keyframes gameOverPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+.game-over-text,
+.game-victory-text {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  animation: textFlicker 0.5s infinite;
+}
+
+.game-over-text {
+  color: #FF0000;
+  text-shadow: 
+    0 0 10px #FF0000,
+    0 0 20px #FF0000,
+    0 0 30px #FF0000;
+}
+
+.game-victory-text {
+  color: #00FF99;
+  text-shadow: 
+    0 0 10px #00FF99,
+    0 0 20px #00FF99,
+    0 0 30px #00FF99;
+}
+
+.game-over-score,
+.game-victory-score {
+  font-size: 0.7rem;
+  color: #FFFF00;
+  text-shadow: 
+    0 0 10px #FFFF00,
+    0 0 20px #FFFF00;
+}
+
+@keyframes textFlicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .game-canvas {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .reaction-target {
+    width: 150px;
+    height: 150px;
+  }
+
+  .target-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .target-inner {
+    width: 70px;
+    height: 70px;
+  }
+
+  .game-over-text,
+  .game-victory-text {
+    font-size: 0.8rem;
+  }
+
+  .game-over-score,
+  .game-victory-score {
+    font-size: 0.6rem;
+  }
+}
+

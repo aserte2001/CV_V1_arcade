@@ -1,0 +1,252 @@
+/* Start Screen Styles */
+.start-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: startScreenFadeIn 1s ease-in;
+}
+
+@keyframes startScreenFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.start-screen-content {
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 40px;
+  animation: contentSlideIn 1.5s ease-out;
+}
+
+@keyframes contentSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.start-title {
+  margin-bottom: 60px;
+}
+
+.start-title-main {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+  color: #00FFFF;
+  text-shadow: 
+    0 0 20px #00FFFF,
+    0 0 40px #00FFFF,
+    0 0 60px #00FFFF,
+    0 0 80px rgba(0, 255, 255, 0.5);
+  margin: 0 0 20px 0;
+  letter-spacing: 8px;
+  animation: titleGlow 2s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%, 100% {
+    text-shadow: 
+      0 0 20px #00FFFF,
+      0 0 40px #00FFFF,
+      0 0 60px #00FFFF,
+      0 0 80px rgba(0, 255, 255, 0.5);
+  }
+  50% {
+    text-shadow: 
+      0 0 30px #00FFFF,
+      0 0 60px #00FFFF,
+      0 0 90px #00FFFF,
+      0 0 120px rgba(0, 255, 255, 0.8);
+  }
+}
+
+.start-title-sub {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+  color: #FF00FF;
+  text-shadow: 
+    0 0 15px #FF00FF,
+    0 0 30px #FF00FF,
+    0 0 45px rgba(255, 0, 255, 0.5);
+  margin: 0;
+  letter-spacing: 4px;
+  animation: subtitleGlow 2s ease-in-out infinite;
+}
+
+@keyframes subtitleGlow {
+  0%, 100% {
+    text-shadow: 
+      0 0 15px #FF00FF,
+      0 0 30px #FF00FF,
+      0 0 45px rgba(255, 0, 255, 0.5);
+  }
+  50% {
+    text-shadow: 
+      0 0 25px #FF00FF,
+      0 0 50px #FF00FF,
+      0 0 75px rgba(255, 0, 255, 0.8);
+  }
+}
+
+.start-welcome {
+  margin-bottom: 50px;
+}
+
+.welcome-text {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  color: #FFFF00;
+  text-shadow: 
+    0 0 10px #FFFF00,
+    0 0 20px #FFFF00;
+  margin: 0 0 15px 0;
+  letter-spacing: 3px;
+}
+
+.welcome-name {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  color: #00FF99;
+  text-shadow: 
+    0 0 15px #00FF99,
+    0 0 30px #00FF99,
+    0 0 45px rgba(0, 255, 153, 0.5);
+  margin: 0;
+  letter-spacing: 4px;
+  animation: namePulse 2s ease-in-out infinite;
+}
+
+@keyframes namePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.start-instructions {
+  margin-bottom: 40px;
+}
+
+.instruction-text {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
+  color: #FFFFFF;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  margin: 10px 0;
+  letter-spacing: 2px;
+  animation: instructionBlink 1.5s ease-in-out infinite;
+}
+
+@keyframes instructionBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.start-button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  padding: 20px 50px;
+  background: transparent;
+  border: 3px solid #00FFFF;
+  color: #00FFFF;
+  cursor: pointer;
+  text-shadow: 
+    0 0 10px #00FFFF,
+    0 0 20px #00FFFF;
+  letter-spacing: 4px;
+  transition: all 0.3s;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.3),
+    inset 0 0 20px rgba(0, 255, 255, 0.1);
+  animation: buttonPulse 2s ease-in-out infinite;
+  margin-bottom: 40px;
+}
+
+@keyframes buttonPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 20px rgba(0, 255, 255, 0.3),
+      inset 0 0 20px rgba(0, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 40px rgba(0, 255, 255, 0.6),
+      inset 0 0 30px rgba(0, 255, 255, 0.2);
+  }
+}
+
+.start-button:hover {
+  background: rgba(0, 255, 255, 0.1);
+  color: #FFFF00;
+  border-color: #FFFF00;
+  text-shadow: 
+    0 0 15px #FFFF00,
+    0 0 30px #FFFF00;
+  box-shadow: 
+    0 0 40px rgba(255, 255, 0, 0.5),
+    inset 0 0 30px rgba(255, 255, 0, 0.2);
+  transform: scale(1.1);
+}
+
+.start-button:active {
+  transform: scale(0.95);
+}
+
+.start-footer {
+  margin-top: 60px;
+}
+
+.footer-text {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.5rem;
+  color: #666;
+  text-shadow: 0 0 5px rgba(102, 102, 102, 0.5);
+  letter-spacing: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .start-title-main {
+    font-size: 2rem;
+  }
+
+  .start-title-sub {
+    font-size: 1rem;
+  }
+
+  .welcome-name {
+    font-size: 0.9rem;
+  }
+
+  .start-button {
+    font-size: 0.8rem;
+    padding: 15px 40px;
+  }
+
+  .instruction-text {
+    font-size: 0.5rem;
+  }
+}
+

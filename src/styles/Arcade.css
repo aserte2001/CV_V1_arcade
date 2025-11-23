@@ -1,0 +1,221 @@
+/* Arcade Background Styles */
+.arcade-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Tron-Style Grid Lines */
+.grid-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+}
+
+.grid-lines {
+  position: absolute;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #00FFFF 50%,
+    transparent 100%
+  );
+  animation: gridPulse 3s ease-in-out infinite;
+}
+
+.grid-lines.horizontal {
+  width: 100%;
+  height: 2px;
+  top: 0;
+  animation: gridMoveHorizontal 8s linear infinite;
+}
+
+.grid-lines.vertical {
+  width: 2px;
+  height: 100%;
+  left: 0;
+  animation: gridMoveVertical 8s linear infinite;
+}
+
+.grid-lines.diagonal-1 {
+  width: 2px;
+  height: 200%;
+  transform: rotate(45deg);
+  left: 25%;
+  animation: gridMoveDiagonal 10s linear infinite;
+}
+
+.grid-lines.diagonal-2 {
+  width: 2px;
+  height: 200%;
+  transform: rotate(-45deg);
+  right: 25%;
+  animation: gridMoveDiagonal 12s linear infinite;
+}
+
+@keyframes gridPulse {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes gridMoveHorizontal {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes gridMoveVertical {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes gridMoveDiagonal {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Flackernde Neon-Schriftzüge */
+.neon-text-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.neon-text {
+  position: absolute;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+  color: #FF00FF;
+  text-shadow: 
+    0 0 10px #FF00FF,
+    0 0 20px #FF00FF,
+    0 0 30px #FF00FF;
+  animation: neonFlicker 3s infinite;
+}
+
+.neon-text.flicker-1 {
+  top: 10%;
+  left: 5%;
+  color: #FF00FF;
+  text-shadow: 
+    0 0 10px #FF00FF,
+    0 0 20px #FF00FF,
+    0 0 30px #FF00FF;
+}
+
+.neon-text.flicker-2 {
+  top: 15%;
+  right: 5%;
+  color: #00FFFF;
+  text-shadow: 
+    0 0 10px #00FFFF,
+    0 0 20px #00FFFF,
+    0 0 30px #00FFFF;
+  animation-delay: 0.5s;
+}
+
+.neon-text.flicker-3 {
+  bottom: 20%;
+  left: 10%;
+  color: #FFFF00;
+  text-shadow: 
+    0 0 10px #FFFF00,
+    0 0 20px #FFFF00,
+    0 0 30px #FFFF00;
+  animation-delay: 1s;
+}
+
+.neon-text.flicker-4 {
+  bottom: 15%;
+  right: 10%;
+  color: #00FF99;
+  text-shadow: 
+    0 0 10px #00FF99,
+    0 0 20px #00FF99,
+    0 0 30px #00FF99;
+  animation-delay: 1.5s;
+}
+
+@keyframes neonFlicker {
+  0%, 100% {
+    opacity: 0.5;
+    text-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor;
+  }
+  50% {
+    opacity: 0.3;
+    text-shadow: 
+      0 0 2px currentColor,
+      0 0 5px currentColor,
+      0 0 8px currentColor;
+  }
+}
+
+/* Neon-Partikel */
+.neon-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #00FFFF;
+  border-radius: 50%;
+  box-shadow: 
+    0 0 5px #00FFFF,
+    0 0 10px #00FFFF;
+  animation: particleFloat 6s ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.5);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .neon-text {
+    font-size: 1rem;
+  }
+  
+  .grid-lines {
+    opacity: 0.2;
+  }
+}
+

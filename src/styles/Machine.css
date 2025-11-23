@@ -1,0 +1,241 @@
+/* Arcade Machine Styles */
+.arcade-machine {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  min-height: 600px;
+  background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+  border: 4px solid #FF00FF;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 
+    0 0 30px #FF00FF,
+    inset 0 0 30px rgba(255, 0, 255, 0.1);
+  transition: all 0.3s;
+  font-family: 'Press Start 2P', cursive;
+  margin: 0 auto;
+}
+
+.arcade-machine:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 0 40px #FF00FF,
+    inset 0 0 40px rgba(255, 0, 255, 0.2);
+}
+
+.arcade-machine.active {
+  border-color: #00FFFF;
+  box-shadow: 
+    0 0 50px #00FFFF,
+    inset 0 0 40px rgba(0, 255, 255, 0.3);
+  animation: machinePulse 0.5s ease-in-out;
+}
+
+@keyframes machinePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+/* Marquee Text */
+.machine-marquee {
+  width: 100%;
+  height: 40px;
+  background: #000;
+  border: 2px solid #00FFFF;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  position: relative;
+  box-shadow: 
+    0 0 15px #00FFFF,
+    inset 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.marquee-content {
+  display: flex;
+  white-space: nowrap;
+  animation: marqueeScroll 10s linear infinite;
+  height: 100%;
+  align-items: center;
+}
+
+.marquee-text {
+  display: inline-block;
+  padding: 0 30px;
+  font-size: 0.7rem;
+  color: #FFFF00;
+  text-shadow: 
+    0 0 10px #FFFF00,
+    0 0 20px #FFFF00;
+  animation: marqueeFlicker 2s infinite;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeFlicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Machine Body */
+.machine-body {
+  position: relative;
+  width: 100%;
+}
+
+/* LED Display */
+.machine-led-display {
+  width: 100%;
+  height: 50px;
+  background: #000;
+  border: 2px solid #00FF99;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 0 15px #00FF99,
+    inset 0 0 20px rgba(0, 255, 153, 0.3);
+}
+
+.led-screen {
+  width: 90%;
+  height: 80%;
+  background: #001100;
+  border: 1px solid #00FF99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 20px #00FF99;
+}
+
+.led-text {
+  font-size: 0.8rem;
+  color: #00FF99;
+  text-shadow: 
+    0 0 10px #00FF99,
+    0 0 20px #00FF99;
+  animation: ledBlink 1s infinite;
+  letter-spacing: 2px;
+}
+
+@keyframes ledBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Machine Screen - Verbesserter Kontrast */
+.machine-screen {
+  width: 100%;
+  min-height: 500px;
+  background: #000;
+  border: 3px solid #00FFFF;
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 15px;
+  box-shadow: 
+    0 0 25px #00FFFF,
+    0 0 40px rgba(0, 255, 255, 0.4),
+    inset 0 0 30px rgba(0, 255, 255, 0.15);
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+}
+
+.screen-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+  color: #FFFFFF;
+  font-size: 0.95rem;
+  text-align: left;
+  line-height: 2.4;
+  z-index: 1;
+  text-shadow: 
+    0 0 5px rgba(255, 255, 255, 1),
+    0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.screen-subtitle {
+  font-size: 1rem;
+  color: #FFFF00;
+  text-shadow: 
+    0 0 5px rgba(255, 255, 0, 1),
+    0 0 10px rgba(255, 255, 0, 0.9),
+    0 0 15px rgba(255, 255, 0, 0.6);
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+
+.insert-coin-prompt {
+  margin-top: 20px;
+  animation: coinPromptBlink 1.5s infinite;
+}
+
+@keyframes coinPromptBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .arcade-machine {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    min-height: 400px;
+    padding: 15px;
+  }
+
+  .machine-screen {
+    min-height: 400px;
+    padding: 20px;
+  }
+
+  .screen-content {
+    font-size: 0.7rem;
+    line-height: 1.8;
+  }
+
+  .marquee-text {
+    font-size: 0.6rem;
+  }
+
+  .led-text {
+    font-size: 0.7rem;
+  }
+}
+
